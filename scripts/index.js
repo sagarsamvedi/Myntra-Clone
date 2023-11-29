@@ -1,13 +1,13 @@
 let bagItems;
 onLoad();
 
-
 function onLoad(){
     let bagItemStr = localStorage.getItem('bagItems');
     bagItems = bagItemStr ? JSON.parse(bagItemStr) : [];
     displayBagIcon();
     displayItemsOnHomePage();
 }
+
 function addToBag(item){
     bagItems.push(item)
     localStorage.setItem('bagItems',JSON.stringify(bagItems));
@@ -52,7 +52,6 @@ function displayItemsOnHomePage(){
 })
 itemsContainerElement.innerHTML = innerHtml
 }
-
 
 function searchResult() {
     let searchQuery = document.querySelector('.search_input').value.toLowerCase(); // Convert to lowercase
